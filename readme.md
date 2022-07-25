@@ -12,7 +12,12 @@ Essentially automates logining into the service(s) above and clicks the download
 #### Requirements
 
 Node.js and NPM
-Debian/Ubuntu: `#: apt install node npm`
+
+If you are using Debian/Ubuntu:
+`#: apt install node npm`
+
+Also available for Windows/Mac/Other Linux etc.
+https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 
 #### How to use
 
