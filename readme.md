@@ -1,6 +1,6 @@
 ## Meridian Energy Downloader
 
-This project uses Puppeteer (Google Chrome) to automatically download daily usage data as a csv.
+This project uses Puppeteer (Google Chrome) to automatically download daily usage data as a csv containing daily total and "per register" kWh usage.
 
 https://account.meridianenergy.co.nz/
 https://secure.meridianenergy.co.nz/
@@ -22,6 +22,8 @@ Debian/Ubuntu: `#: apt install node npm`
 4. Update the .env with your favorite editor (e.g. `nano .env`)
 5. Run `node ./index.js`
 
+You should then see a `meridian-latest.csv` file.
+
 #### Security Note
 
 This project requires your meridian email and password to be stored in the .env file as plain text.
@@ -32,4 +34,5 @@ Additionally Meridian may update their web application and cause this script to 
 #### Donation
 
 If you find use out of this script, consider buying me a coffee with Bitcoin or don't.
+
 BTC: 3QCnGKxMfak7WZurVpEGkCAxNPcpgDzDGj
