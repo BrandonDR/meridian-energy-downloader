@@ -1,0 +1,5 @@
+node_modules/
+output.log
+meridian-lastest.csv
+downloads/
+.env
