@@ -1,5 +1,5 @@
 node_modules/
 output.log
 meridian-lastest.csv
-downloads/
+meridian-temp-downloads/
 .env

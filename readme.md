@@ -29,6 +29,13 @@ https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 
 You should then see a `meridian-latest.csv` file.
 
+#### Debugging
+
+By default the script runs headless, which means no Chrome window will appear.
+To see what is going on you can run the script with `--disable-headless`
+
+Run `node ./index.js --disable-headless`
+
 #### Security Note
 
 This project requires your meridian email and password to be stored in the .env file as plain text.

@@ -4,14 +4,18 @@ const puppeteer = require('puppeteer');
 const fs = require('fs');
 require('dotenv').config();
 
+const args = process.argv.slice(2);
+const headless = !args.includes('--disable-headless');
+
 (async () => {
-    const downloadFolder = process.cwd() + '/downloads';
+    const downloadFolder = process.cwd() + '/meridian-temp-downloads';
     if (fs.existsSync(downloadFolder)) {
         fs.rmSync(downloadFolder, { recursive: true, force: true });
-        fs.mkdirSync(downloadFolder);
     }
+    fs.mkdirSync(downloadFolder);
 
     const browser = await puppeteer.launch({
+        headless,
         args: [
             '--no-sandbox',
             '--disable-setuid-sandbox'
@@ -36,6 +40,7 @@ require('dotenv').config();
         downloadPath: downloadFolder
     });
 
+    await page.waitForTimeout(1000);
     await page.click('[value="Download"]');
 
     let files = [];
@@ -53,5 +58,7 @@ require('dotenv').config();
     if (files.length) {
         fs.copyFileSync(downloadFolder + '/' + files[0], './meridian-lastest.csv');
     }
-
+    if (fs.existsSync(downloadFolder)) {
+        fs.rmSync(downloadFolder, { recursive: true, force: true });
+    }
 })();
